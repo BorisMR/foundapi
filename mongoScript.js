@@ -1,5 +1,5 @@
 
-print("Iniciando Script");
+print("Iniciando script de la fundacion");
 
 coneccion = new Mongo("localhost");
 
@@ -8,11 +8,10 @@ var db = coneccion.getDB(dbName);
 
 db.dropDatabase();
 
-/*coleciones de nuestro modelo de datos*/
-db.createCollection('series');
-db.createCollection('libros');
 //db.createCollection('capitulos');
 //db.createCollection('relatos');
+db.createCollection('libros');
+db.createCollection('series');
 //db.createCollection('personajes');
 
 /* Libros */
@@ -58,6 +57,41 @@ librosAsimov = [
         "_id" : "8",
         "nombre" : "un guijarro en el cielo",
         "publicacion" : 1950
+    },
+    libro9 = {
+        "_id" : "9",
+        "nombre" : "preludio a la fundacion",
+        "publicacion" : 1988
+    },
+    libro10 = {
+        "_id" : "10",
+        "nombre" : "hacia la fundacion",
+        "publicacion" : 1993
+    },
+    libro11 = {
+        "_id" : "11",
+        "nombre" : "fundacion",
+        "publicacion" : 1951
+    },
+    libro12 = {
+        "_id" : "12",
+        "nombre" : "fundacion e imperio",
+        "publicacion" : 1952
+    },
+    libro13 = {
+        "_id" : "13",
+        "nombre" : "segunda fundacion",
+        "publicacion" : 1953
+    },
+    libro14 = {
+        "_id" : "14",
+        "nombre" : "los limites de la fundacion",
+        "publicacion" : 1982
+    },
+    libro15 = {
+        "_id" : "15",
+        "nombre" : "fundacion y tierra",
+        "publicacion" : 1986
     }
 ];
 
@@ -85,7 +119,9 @@ seriesAsimov = [
         "_id" : "3",
         "nombre" : "ciclo de la fundacion",
         "descripcion" : "inicio de la era de las fundaciones y desarrollo de la saga principal",
-        "libros" : []
+        "libros" : [
+            libro9, libro10, libro11, libro12, libro13, libro14, libro15
+        ]
     }
 ];
 

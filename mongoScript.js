@@ -1,3 +1,4 @@
+//"mongo mongoScript.js" para correr
 
 print("Iniciando script de la fundacion");
 

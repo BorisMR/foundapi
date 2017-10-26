@@ -10,10 +10,12 @@ var Serie = require('./app/models/serie');
 var express = require('express');
 var app = express();
 
+/* === MIDDLEWARE === */
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 var port = process.env.PORT || 8008;
 
@@ -21,12 +23,12 @@ var port = process.env.PORT || 8008;
 var router = express.Router();
 
 router.get('/', function (req, res) {
-  res.json({ message : 'Hola universo' });
+  res.redirect()
 });
 
 app.use('/api', router);
 
 /* === INICIAR SERVIDOR === */
 app.listen(port, function() {
-  console.log('Server Started on port 3000');
+  console.log('Server Started on port:'+ port);
 });
